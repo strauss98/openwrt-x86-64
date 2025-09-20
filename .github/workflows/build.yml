@@ -8,9 +8,12 @@ on:
       - ".github/workflows/build.yml"
 
 env:
-  FIRMWARE_URL: "https://downloads.openwrt.org/releases/19.07.2/targets/x86/64/openwrt-19.07.2-x86-64-generic-rootfs.tar.gz"
-  REPOSITORY: crazygit/openwrt-x86-64
-  TAG: 19.07.2
+#  FIRMWARE_URL: "https://downloads.openwrt.org/releases/19.07.2/targets/x86/64/openwrt-19.07.2-x86-64-generic-rootfs.tar.gz"
+#  REPOSITORY: crazygit/openwrt-x86-64
+#  TAG: 19.07.2
+  FIRMWARE_URL: "https://downloads.immortalwrt.org/releases/24.10.2/targets/x86/64/immortalwrt-24.10.2-x86-64-rootfs.tar.gz"
+  REPOSITORY: strauss988/openwrt-x86-64
+  TAG: 24.10.2
 
 jobs:
   build:
@@ -30,7 +33,7 @@ jobs:
           FIRMWARE: openwrt.tar.gz
         with:
           name: ${{ env.REPOSITORY }}
-          username: ${{ secrets.DOCKER_USERNAME }}
-          password: ${{ secrets.DOCKER_TOKEN }}
+          username: ${{ OpenWRT-secrets.DOCKER_USERNAME }}
+          password: ${{ OpenWRT-secrets.DOCKER_TOKEN }}
           buildargs: FIRMWARE
           tags: "latest,${{ env.TAG }}"
