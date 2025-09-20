@@ -1,7 +1,7 @@
 name: Build OpenWrt Docker x86-64 image
 
 on:
-#  workflow_dispatch:
+#  workflow_dispatch: 
   push:
     branches:
       - master
