@@ -1,4 +1,4 @@
-![Build OpenWrt Docker x86-64 image](https://github.com/crazygit/openwrt-x86-64/workflows/Build%20OpenWrt%20Docker%20x86-64%20image/badge.svg?branch=master)
+![Build OpenWrt Docker x86-64 image](https://github.com/strauss98/openwrt-x86-64/workflows/Build%20OpenWrt%20Docker%20x86-64%20image/badge.svg?branch=master)
 
 [toc]
 
@@ -15,10 +15,10 @@
 
 ```bash
 # 下载镜像
-$ docker pull crazygit/openwrt-x86-64
+$ docker pull strauss98/openwrt-x86-64
 
 # 查看镜像信息
-$ docker run --rm crazygit/openwrt-x86-64 cat /etc/banner
+$ docker run --rm strauss988/openwrt-x86-64 cat /etc/banner
   _______                     ________        __
  |       |.-----.-----.-----.|  |  |  |.----.|  |_
  |   -   ||  _  |  -__|     ||  |  |  ||   _||   _|
@@ -31,7 +31,7 @@ $ docker run --rm crazygit/openwrt-x86-64 cat /etc/banner
 
 如果觉得官网镜像功能太简单，也可以用我编译的Lean'S大神的OpenWrt固件
 
-<https://github.com/crazygit/Actions-OpenWrt>
+<https://github.com/strauss98/Actions-OpenWrt>
 
 ## 镜像使用配置
 
@@ -42,7 +42,7 @@ $ docker run --rm crazygit/openwrt-x86-64 cat /etc/banner
 
 同样，如果觉得手动配置比较麻烦，可以使用我整理好使用`docker-compose`的一键拉起服务文件
 
-<https://github.com/crazygit/family-media-center>
+<https://github.com/strauss98/family-media-center>
 
 这里主要描述下本人的手动配置方式
 
@@ -227,12 +227,12 @@ $ docker run --rm crazygit/openwrt-x86-64 cat /etc/banner
 
 1. 编译自己的固件,可以参考：
 
-    https://github.com/crazygit/Actions-OpenWrt
+    https://github.com/strauss98/Actions-OpenWrt
 
 2. 下载本库
 
     ```bash
-    $ git clone https://github.com/crazygit/openwrt-x86-64.git openwrt-x86-64
+    $ git clone https://github.com/strauss98/openwrt-x86-64.git openwrt-x86-64
     ```
 3. 拷贝自己的固件到`Dockerfile`文件所在的目录,固件文件名后缀应该是`.tar.gz`的
 
@@ -244,8 +244,8 @@ $ docker run --rm crazygit/openwrt-x86-64 cat /etc/banner
 4. 编译镜像
 
     ```bash
-    # -t后面为镜像的名字，可以随便指定: 如: crazygit/openwrt-x86-64
-    $ docker build . --build-arg FIRMWARE=openwrt.tar.gz -t crazygit/openwrt-x86-64
+    # -t后面为镜像的名字，可以随便指定: 如: strauss988/openwrt-x86-64
+    $ docker build . --build-arg FIRMWARE=openwrt.tar.gz -t strauss988/openwrt-x86-64
     ```
 
 ## 使用Github Action自动构建
@@ -258,26 +258,26 @@ $ docker run --rm crazygit/openwrt-x86-64 cat /etc/banner
     ```yaml
     env:
       FIRMWARE_URL: "https://downloads.openwrt.org/releases/19.07.2/targets/x86/64/openwrt-19.07.2-x86-64-generic-rootfs.tar.gz"
-      REPOSITORY: crazygit/openwrt-x86-64
+      REPOSITORY: strauss988/openwrt-x86-64
       TAG: 19.07.2
     ```
 5. 提交修改之后，github action会自动编译镜像并将镜像push到你的docker hub账户中指定的仓库里
 
 ### 验证镜像
 
-下面的命令注意替换镜像名字`crazygit/openwrt-x86-64`为你自己编译时使用的名字
+下面的命令注意替换镜像名字`strauss988/openwrt-x86-64`为你自己编译时使用的名字
 
 1. 查看编译的镜像
 
     ```
-    $ docker image ls |grep crazygit/openwrt-x86-64
-    crazygit/openwrt-x86-64                                                          latest              07f578cefd53        12 minutes ago      9.43MB
+    $ docker image ls |grep strauss988/openwrt-x86-64
+    strauss988/openwrt-x86-64                                                          latest              07f578cefd53        12 minutes ago      9.43MB
     ```
 
 2. 验证镜像是否正常
 
     ```bash
-    $ docker run --rm crazygit/openwrt-x86-64 cat /etc/banner
+    $ docker run --rm strauss988/openwrt-x86-64 cat /etc/banner
     _______                     ________        __
     |       |.-----.-----.-----.|  |  |  |.----.|  |_
     |   -   ||  _  |  -__|     ||  |  |  ||   _||   _|
