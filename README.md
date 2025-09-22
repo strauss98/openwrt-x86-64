@@ -216,11 +216,11 @@ $ docker run --rm strauss988/openwrt-x86-64 cat /etc/banner
 6. 构建镜像
 
     ```bash
-    $ git clone https://github.com/crazygit/openwrt-x86-64.git openwrt-x86-64
+    $ git clone https://github.com/strauss98/openwrt-x86-64.git openwrt-x86-64
     $ cd openwrt-x86-64
     # 参数1: 第5步中获取的固件下载地址
-    # 参数2: docker镜像的名字，可以随便指定: 如crazygit/openwrt-x86-64
-    $ ./build.sh "https://downloads.openwrt.org/releases/19.07.2/targets/x86/64/openwrt-19.07.2-x86-64-generic-rootfs.tar.gz" crazygit/openwrt-x86-64
+    # 参数2: docker镜像的名字，可以随便指定: 如strauss988/openwrt-x86-64
+    $ ./build.sh "https://downloads.openwrt.org/releases/19.07.2/targets/x86/64/openwrt-19.07.2-x86-64-generic-rootfs.tar.gz" strauss988/openwrt-x86-64
     ```
 
 ### 构建自己的镜像
