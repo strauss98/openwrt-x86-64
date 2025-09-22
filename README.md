@@ -116,7 +116,7 @@ $ docker run --rm strauss988/openwrt-x86-64 cat /etc/banner
 
     ```bash
     # --network使用第4步创建的虚拟网络
-    $ docker run --restart always --name openwrt -d --network openwrt-LAN --privileged crazygit/openwrt-x86-64
+    $ docker run --restart always --name openwrt -d --network openwrt-LAN --privileged strauss988/openwrt-x86-64
 
     # 查看启动的容器
     $ docker ps -a
