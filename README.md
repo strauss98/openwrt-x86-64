@@ -133,15 +133,14 @@ $ docker run --rm strauss988/openwrt-x86-64 cat /etc/banner
     编辑`lan`口的配置如下，有些参数默认的文件里可能没有，按照下面的格式添加上即可
     ```
     config interface 'lan'
-            option type 'bridge'
-            option ifname 'eth0'
-            option proto 'static'
-            option ipaddr '192.168.2.126'
-            option netmask '255.255.255.0'
-            option gateway '192.168.2.1'
-            option dns '192.168.2.1'
-            option broadcast '192.168.2.255'
-            option ip6assign '60'
+        option proto 'static'
+        option ipaddr '192.168.2.126'
+        option netmask '255.255.255.0'
+        option gateway '192.168.2.1'
+        option broadcast '192.168.2.255'
+        option ip6assign '64'
+        option device 'eth0'
+        list dns '192.168.2.1'
     ```
     上面的参数根据自身的情况调整
     * `proto`设置使用静态分配IP地址的方式`static`
